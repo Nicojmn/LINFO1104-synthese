@@ -16,6 +16,7 @@
 \usepackage{lmodern,textcomp}
 \usepackage{tcolorbox}
 \usepackage{etoolbox}
+\usepackage{minted}
 
 
 % English -> French translation
@@ -30,8 +31,8 @@
 
 % Set counter for table of content and minitoc
  
-\setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 \setcounter{minitocdepth}{3}
 
 % Bulma CSS framework color, see : https://bulma.io/documentation/overview/colors/
@@ -53,6 +54,8 @@
   {\tcolorbox[noparskip,colback=#1!5!white,colframe=#1!75!black,arc=1mm]}
   {\endtcolorbox}
 
+\newcommand{\tboxspace}{\vspace{1cm}}
+
 
 % hyperlinks setup 
 
@@ -73,7 +76,12 @@
 
     \input{tex/preface.tex}
 
+    \dominitoc
     \tableofcontents
     \newpage
     \pagenumbering{arabic}
+
+    \input{tex/intro.tex}
+
+    \input{tex/functional.tex}
 \end{document}
